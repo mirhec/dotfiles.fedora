@@ -27,7 +27,7 @@ Otherwise create your admins user account:
 
 #### STEP 6: Setup fish as login shell
 
-    sudo lchsh
+    sudo lchsh -i <SERVER_USERNAME>
         New Shell [/bin/bash]: /usr/bin/fish
 
 #### STEP 7: Configure git
