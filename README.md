@@ -1,25 +1,47 @@
 # Setup dotfiles on Uberspace
 
-#### STEP 1: Login to your server
+#### STEP 1: Login as root user
 
-#### STEP 2: Clone the dotfiles from these reporitory
+#### STEP 2: Creating your admins user account and add it to the sudoers group
 
-```bash
-git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
-~/.homesick/repos/homeshick/bin/homeshick clone mirhec/dotfiles.uberspace
-source ~/.bashrc
-```
+If you already created an user account for the admin, skip this step.
+Otherwise create your admins user account:
 
-#### STEP 3: Install Linuxbrew and fish
-```bash
-git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew
+    adduser <SERVER_USERNAME>
+    passwd <SERVER_USERNAME>
+    gpasswd wheel -a <SERVER_USERNAME>
 
-# symlinks to gcc in order to make brew install able to compile from source
-ln -s /package/host/localhost/gcc-4.9/bin/gcc ~/.linuxbrew/bin/gcc-4.9
-ln -s /package/host/localhost/gcc-4.9/bin/g++ ~/.linuxbrew/bin/g++-4.9
+#### STEP 3: Install the most important tools
 
-# install fish with brew
-brew install fish
-```
+    dnf remove vim-minimal
+    dnf install git vim fish sudo
+
+#### STEP 4: Login to your admins user account
+
+    su - <SERVER_USERNAME>
+
+#### STEP 5: Clone the dotfiles from these reporitory
+
+    git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+    ~/.homesick/repos/homeshick/bin/homeshick clone mirhec/dotfiles.fedora
+
+#### STEP 6: Setup fish as login shell
+
+    sudo lchsh
+        New Shell [/bin/bash]: /usr/bin/fish
+
+#### STEP 7: Configure git
+
+    git config --global user.name "<FIRST_NAME> <LAST_NAME>"
+    git config --global user.email "<EMAIL_ADDRESS>"
+        
+        
+#### STEP 8: Install docker
+    sudo dnf -y install dnf-plugins-core
+    sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+    sudo dnf makecache fast
+    sudo dnf install docker-ce
+    sudo systemctl start docker
+    sudo systemctl enable docker
 
 #### Then log out and log in again to apply the changes
