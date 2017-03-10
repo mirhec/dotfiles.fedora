@@ -44,4 +44,7 @@ Otherwise create your admins user account:
     sudo systemctl start docker
     sudo systemctl enable docker
 
+#### STEP 9: Install nginx
+    sudo dnf install nginx
+
 #### Then log out and log in again to apply the changes
