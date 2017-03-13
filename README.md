@@ -43,6 +43,9 @@ Otherwise create your admins user account:
     sudo dnf install docker-ce docker-compose
     sudo systemctl start docker
     sudo systemctl enable docker
+    sudo gpasswd -a <SERVER_USERNAME> docker
+    sudo systemctl restart docker
+    newgrp docker
 
 #### STEP 9: Install nginx
     sudo dnf install nginx
