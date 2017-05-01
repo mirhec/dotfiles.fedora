@@ -47,7 +47,9 @@ Otherwise create your admins user account:
     sudo systemctl restart docker
     newgrp docker
 
-#### STEP 9: Install nginx
-    sudo dnf install nginx
+#### STEP 9: Install [dcsg](https://github.com/andreaskoch/dcsg)
+    curl -L https://github.com/andreaskoch/dcsg/releases/download/v0.3.0/dcsg_linux_amd64 > dcsg
+    chmod +x dcsg
+    sudo mv dcsg /usr/bin
 
 #### Then log out and log in again to apply the changes
