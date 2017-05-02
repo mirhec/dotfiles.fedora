@@ -10,6 +10,7 @@ export LC_ALL=en_US.UTF-8
 export VISUAL='vim'
 
 PATH="$HOME/.homesick/repos/homeshick/bin:$PATH"
+GOPATH=$HOME/go
 
 # # Autostart workaround for windows
 # fish -l
