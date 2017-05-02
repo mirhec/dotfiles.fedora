@@ -52,4 +52,8 @@ Otherwise create your admins user account:
     chmod +x dcsg
     sudo mv dcsg /usr/bin
 
+#### STEP 10: Install golang
+    sudo dnf install golang
+    mkdir -p $HOME/go
+
 #### Then log out and log in again to apply the changes
