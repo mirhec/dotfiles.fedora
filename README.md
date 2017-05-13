@@ -52,8 +52,8 @@ Otherwise create your admins user account:
     chmod +x dcsg
     sudo mv dcsg /usr/bin
 
-#### STEP 10: Install golang
-    sudo dnf install golang
-    mkdir -p $HOME/go
+#### STEP 10: Install ssh key to log in without password
+    # on your Mac / Linux host run
+    ssh-copy-id [youruser]@[yourfedorahost]
 
 #### Then log out and log in again to apply the changes
