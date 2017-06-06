@@ -40,17 +40,16 @@ Otherwise create your admins user account:
     sudo dnf -y install dnf-plugins-core
     sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
     sudo dnf makecache fast
-    sudo dnf install docker-ce docker-compose
+    sudo dnf install docker-ce
     sudo systemctl start docker
     sudo systemctl enable docker
     sudo gpasswd -a <SERVER_USERNAME> docker
     sudo systemctl restart docker
     newgrp docker
 
-#### STEP 9: Install [dcsg](https://github.com/andreaskoch/dcsg)
-    curl -L https://github.com/andreaskoch/dcsg/releases/download/v0.3.0/dcsg_linux_amd64 > dcsg
-    chmod +x dcsg
-    sudo mv dcsg /usr/bin
+#### STEP 9: Install docker-compose with pip
+    sudo pip install --upgrade pip
+    sudo pip install docker-compose
 
 #### STEP 10: Install ssh key to log in without password
     # on your Mac / Linux host run
