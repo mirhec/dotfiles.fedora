@@ -1,4 +1,4 @@
-# Setup dotfiles on Uberspace
+# Setup dotfiles on Fedora
 
 #### STEP 1: Login as root user
 
