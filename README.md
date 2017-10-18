@@ -4,7 +4,7 @@
 
     dnf install git
 
-#### STEP 2: Clone awesome mamiu/dotfiles and run installer
+#### STEP 2: Clone awesome [mamiu/dotfiles](https://github.com/mamiu/dotfiles) and run installer
 
     git clone https://github.com/mamiu/dotfiles
     cd dotfiles/install
